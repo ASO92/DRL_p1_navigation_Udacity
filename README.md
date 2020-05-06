@@ -16,7 +16,8 @@ These algorithms can start their learning from scratch, and under the right lear
 On the other hand, the part that helps to the agent to take decisions based on its own experience is based on [Neural Network Algorithms](https://pathmind.com/wiki/neural-network) - this is the deep learning part.
 
 
-## First steps in the environment
-All the project has been built and developed using the **Unity MAchine Learning Agents Toolkit (ML-Agents)**, which is an open-source unity plug
 
-[OpenAI](https://github.com/openai/gym)
+## First steps in the environment
+All the project has been built and developed using the **Unity Machine Learning Agents Toolkit (ML-Agents)**, which is an open-source Unity plugin that enables games and simulations to serve as envirnments for training intelligent agents. You can read further about ML-agents by perusing the [GitHub repository](https://github.com/Unity-Technologies/ml-agents).
+
+Note: The project environment provided by Udacity is similar to, but not indentical to the [Banana Collector](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Learning-Environment-Examples.md#banana-collector) environment
