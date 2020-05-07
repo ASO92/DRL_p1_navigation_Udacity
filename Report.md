@@ -36,15 +36,10 @@ In the following sections, we'll describe each component of the algorithm in det
 ### Deep Q-Networks
 
 #### Q-Function
-To discover an optimal policy, I setup a Q-function. The Q-function calculates the expected reward `R` for all possible actions `A` in all possible states `S`.
+To discover an optimal policy, it is setup a Q-function. The Q-function calculates the expected reward `R` for all possible actions `A` in all possible states `S`.
 
-<img src="assets/Q-function.png" width="19%" align="top-left" alt="" title="Q-function" />
-
-<img src="assets/Q-function_dimension.png" width="50%"
+<img src="assets/Q-function_dimension.png" width="20%"
 align="top-centre" alt="" title="Q-function" />
-
-
-
 
 We can then define our optimal policy `π*` as the action that maximizes the Q-function for a given state across all possible states. The optimal Q-function `Q*(s,a)` maximizes the total expected reward for an agent starting in state `s` and choosing action `a`, then following the optimal policy for each subsequent state.
 
@@ -52,11 +47,21 @@ We can then define our optimal policy `π*` as the action that maximizes the Q-f
 
 In order to discount returns at future time steps, the Q-function can be expanded to include the hyperparameter gamma `γ`.
 
-<img src="assets/optimal-action-value-function.png" width="67%" align="top-left" alt="" title="Optimal Action Value Function" />
+<img src="assets/optimal-action-value-function_discountFactor.png" width="67%" align="top-left" alt="" title="Optimal Action Value Function" />
 
-#### Algorithm
+#### Epsilon Greedy Algorithm
+One challenge with the Q-function above is choosing which action to take while the agent is still learning the optimal policy. Should the agent choose an action based on the Q-values observed thus far? Or, should the agent try a new action in hopes of earning a higher reward? This is known as the **exploration vs. exploitation dilemma**.
 
-![Deep Q-Learning algorithm from Udacity course](./assets/DQN_algorithm.png)
+To address this, it has been implemented an **𝛆-greedy algorithm**. This algorithm allows the agent to systematically manage the exploration vs. exploitation trade-off. The agent "explores" by picking a random action with some probability epsilon `𝛜`. However, the agent continues to "exploit" its knowledge of the environment by choosing actions based on the policy with probability (1-𝛜).
+
+Furthermore, the value of epsilon is purposely decayed over time, so that the agent favors exploration during its initial interactions with the environment, but increasingly favors exploitation as it gains more experience. The starting and ending values for epsilon, and the rate at which it decays are three hyperparameters that are later tuned during experimentation.
+
+You can find the 𝛆-greedy logic implemented as part of the `agent.act()` method [here](C:\Users\rovaa\github\DRL_p1_navigation_Udacity\agent.py#L65) in `agent.py` of the source code.
+
+
+##### Algorithm implementation
+
+<img src="assets/DQN_algorithm.png" width="100%" align="top-left" alt="" title="Optimal Policy Equation" />
 
 This algorithm screenshot is taken from the [Deep Reinforcement Learning Nanodegree course](https://www.udacity.com/course/deep-reinforcement-learning-nanodegree--nd893)
 
