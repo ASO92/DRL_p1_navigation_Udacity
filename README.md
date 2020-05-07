@@ -41,5 +41,92 @@ Given this information, the agent has to learn how to best select actions. Four 
 To solve the environment, the Agent must obtain an average score of **+13** over 100 consecutive episodes.
 
 ## 3. Included in this repository
-* The code used to train the Agent
-  * NAvigation.ipynb
+* The code used to create and train the Agent
+  * Navigation.ipynb
+  * dqn_agent.py
+  * model.py
+* The trained model weights
+  * checkpoint.pth
+* A Report.md file describing the development process and the learning algorithm, along with ideas for future work
+* This README.md file to explain the environment configuration characteristics
+
+## 4. Setting up the environment
+
+This section describes how to get the code for this project and configure the environment.
+
+### Getting the code
+You have two options to get the code contained in this repository:
+##### Option 1. Download it as a zip file
+
+* [Click here(RELLENAR LINK]() to download all the content of this repository as a zip file
+* Uncompress the downloaded file into a folder of your choice
+
+##### Option 2. Clone this repository using Git version control system
+If you are not sure about having Git installed in your system, run the following command to verify that:
+
+```
+$ git --version
+```
+If you need to install it, follow [this link](https://git-scm.com/downloads) to do so.
+
+Having Git installed in your system, you can clone this repository by running the following command:
+
+```
+$ git clone https://github.com/ASO92/DRL_p1_navigation_Udacity.git
+```
+### Installing Miniconda / Anaconda
+You can skip this step in case that you have installed Miniconda or Anaconda version.
+
+Miniconda is a free minimal installer for conda. It is a small, bootstrap version of Anaconda that includes only conda, Python, the packages they depend on, and a small number of other useful packages, including pip, zlib, and a few others.  
+
+If you would like to know more about Anaconda, visit [this link](https://www.anaconda.com/).
+
+In the following links, you find all the information to install **Miniconda** (*recommended*)
+
+* Download the installer: [https://docs.conda.io/en/latest/miniconda.html](https://docs.conda.io/en/latest/miniconda.html)
+* Installation Guide: [https://conda.io/projects/conda/en/latest/user-guide/install/index.html](https://conda.io/projects/conda/en/latest/user-guide/install/index.html)
+
+Alternatively, you can install the complete Anaconda Platform.
+
+* Download the installer: [https://www.anaconda.com/distribution/](https://www.anaconda.com/distribution/)
+* Installation Guide: [https://docs.anaconda.com/anaconda/install/](https://docs.anaconda.com/anaconda/install/)
+
+### Installation requirements
+This step is intended to be done in order to install the dependencies (packages) necessary to run the environment in your machine.
+
+- You first need to configure a Python 3.6 / PyTorch 0.4.0 environment with the needed requirements as described in the [Udacity repository](https://github.com/udacity/deep-reinforcement-learning#dependencies)
+- Of course you have to clone this project and have it accessible in your Python environment
+- Then you have to install the Unity environment as described in the [Getting Started section](https://github.com/udacity/deep-reinforcement-learning/blob/master/p1_navigation/README.md) (The Unity ML-agant environment is already configured by Udacity)
+
+  - Download the environment from one of the links below.  You need only select the environment that matches your operating system:
+    - Linux: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana_Linux.zip)
+    - Mac OSX: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana.app.zip)
+    - Windows (32-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana_Windows_x86.zip)
+    - Windows (64-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana_Windows_x86_64.zip)
+    
+    (_For Windows users_) Check out [this link](https://support.microsoft.com/en-us/help/827218/how-to-determine-whether-a-computer-is-running-a-32-bit-version-or-64) if you need help with determining if your computer is running a 32-bit version or 64-bit version of the Windows operating system.
+
+    (_For AWS_) If you'd like to train the agent on AWS (and have not [enabled a virtual screen](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Training-on-Amazon-Web-Service.md)), then please use [this link](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana_Linux_NoVis.zip) to obtain the environment.
+
+
+- Finally, unzip the environment archive in the 'project's environment' directory and eventually adjust thr path to the UnityEnvironment in the code.
+
+### Uninstall
+If you wish to revert all the modifies in your system, and remove all the code, dependencies and programs installed in the steps above, you will want to follow the next steps.
+
+#### Uninstall Miniconda or Anaconda
+To do so, please refer to [this link](https://docs.anaconda.com/anaconda/install/uninstall/).
+
+
+#### Remove the code
+Simply delete the entire folder containing the code you downloaded in the step "Getting the code"
+
+
+## 5. Train a agent
+
+Execute the provided notebook within this Nanodegree Udacity Online Workspace for "project #1  Navigation" (or build your own local environment and make necessary adjustements for the path to the UnityEnvironment in the code )
+
+Note :
+- Manually playing with the environment has not been implemented as it is not available with Udacity Online Worspace (No Virtual Screen)    
+- Watching the trained agent playing in the environment has not been implemented neither, as it is not available with Udacity Online Worspace (No Virtual Screen) and not compatible with my personal setup (see Misc : Configuration used  section)
+- To do so, it is necessary to play with the agent in your local machine, with the steps described above.
