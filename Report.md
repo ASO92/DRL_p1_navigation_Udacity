@@ -49,7 +49,7 @@ In order to discount returns at future time steps, the Q-function can be expande
 
 <img src="assets/optimal-action-value-function_discountFactor.png" width="67%" align="top-left" alt="" title="Optimal Action Value Function" />
 
-#### Epsilon Greedy Algorithm
+#### Epsilon-Greedy Algorithm
 One challenge with the Q-function above is choosing which action to take while the agent is still learning the optimal policy. Should the agent choose an action based on the Q-values observed thus far? Or, should the agent try a new action in hopes of earning a higher reward? This is known as the **exploration vs. exploitation dilemma**.
 
 To address this, it has been implemented an **𝛆-greedy algorithm**. This algorithm allows the agent to systematically manage the exploration vs. exploitation trade-off. The agent "explores" by picking a random action with some probability epsilon `𝛜`. However, the agent continues to "exploit" its knowledge of the environment by choosing actions based on the policy with probability (1-𝛜).
@@ -73,6 +73,9 @@ This algorithm screenshot is taken from the [Deep Reinforcement Learning Nanodeg
 
 The implementation of the algorithm may be found in [here](model.py)
 
+### Enhanced Variants of DQN algorithm
+
+The following variants are intended to cover issues of the basic performance of DQN algorithm, trying to enhance that performance.
 
 #### Double Deep Q-Network (DDQN)
 One issue with Deep Q-Networks is they can overestimate Q-values (see [Thrun & Schwartz, 1993](https://www.ri.cmu.edu/pub_files/pub1/thrun_sebastian_1993_1/thrun_sebastian_1993_1.pdf)). The accuracy of the Q-values depends on which actions have been tried and which states have been explored. If the agent hasn't gathered enough experiences, the Q-function will end up selecting the maximum value from a noisy set of reward estimates. Early in the learning process, this can cause the algorithm to propagate incidentally high rewards that were obtained by chance (exploding Q-values). This could also result in fluctuating Q-values later in the process.
@@ -97,3 +100,38 @@ The reasoning behind this approach is that state values don't change much across
 The dueling agents are implemented within the fully connected layers [here](C:\Users\rovaa\github\DRL_p1_navigation_Udacity\model.py#L36) in the `model.py` file of the source code.
 
 ##### &nbsp;
+
+## 3. Adjusting the Hyperparameters
+To experiment with how the Agent learns through distinct parameters, you can tune these variables:  
+
+**1.** In the **Navigation.ipynb** file  
+
+* **n_episodes**: Maximum number of training episodes
+* **max_t**: Maximum number of timesteps per episode
+* **eps_start**: Starting value of epsilon, for epsilon-greedy action selection
+* **eps_end**: Minimum value of epsilon. (Eps-Greedy Ploicy)
+* **eps_decay**: Multiplicative factor (per episode) for decreasing epsilon  
+* **train_mode(bool)**: if 'True' set environment to training mode. (Instead of just execute trained weights)
+* **ckt_path(string)**: It is the path where have to be saved the weights of the trained agent
+* **episode_Stop(bool)**: if True, the simulation stops when target is reached.
+* **save_weights(bool)**: if 'True' save weights of the trained model.
+
+
+**2.** In the **dqn_agent.py** file
+
+* **BUFFER_SIZE**: Replay buffer size
+* **BATCH_SIZE**: Minibatch size
+* **GAMMA**: Discount factor for expected rewards
+* **TAU**: Multiplicative factor for updating the target network weights
+* **LR**: Learning rate
+* **UPDATE_EVERY**: How often to update the network
+
+## 4. Results obtained
+
+There have been carried out several tests to evaluate different performance
+
+### DQN algorithm evaluation
+First of all it has been tested the number of episodes in which the algorithm gets the 13 average scores in the last 100 episodes.
+
+### DQN algorithm eps_Decay sensibility tests
+It is 
