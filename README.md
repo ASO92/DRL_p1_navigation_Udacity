@@ -58,7 +58,7 @@ This section describes how to get the code for this project and configure the en
 You have two options to get the code contained in this repository:
 ##### Option 1. Download it as a zip file
 
-* [Click here(RELLENAR LINK]() to download all the content of this repository as a zip file
+* [Click here](https://github.com/ASO92/DRL_p1_navigation_Udacity/archive/master.zip) to download all the content of this repository as a zip file
 * Uncompress the downloaded file into a folder of your choice
 
 ##### Option 2. Clone this repository using Git version control system
