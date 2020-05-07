@@ -35,7 +35,24 @@ In the following sections, we'll describe each component of the algorithm in det
 
 ### Deep Q-Networks
 
-.
+#### Q-Function
+To discover an optimal policy, I setup a Q-function. The Q-function calculates the expected reward `R` for all possible actions `A` in all possible states `S`.
+
+<img src="assets/Q-function.png" width="19%" align="top-left" alt="" title="Q-function" />
+
+<img src="assets/Q-function_dimension.png" width="50%"
+align="top-centre" alt="" title="Q-function" />
+
+
+
+
+We can then define our optimal policy `π*` as the action that maximizes the Q-function for a given state across all possible states. The optimal Q-function `Q*(s,a)` maximizes the total expected reward for an agent starting in state `s` and choosing action `a`, then following the optimal policy for each subsequent state.
+
+<img src="assets/optimal-policy-equation.png" width="47%" align="top-left" alt="" title="Optimal Policy Equation" />
+
+In order to discount returns at future time steps, the Q-function can be expanded to include the hyperparameter gamma `γ`.
+
+<img src="assets/optimal-action-value-function.png" width="67%" align="top-left" alt="" title="Optimal Action Value Function" />
 
 #### Algorithm
 
