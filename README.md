@@ -124,9 +124,15 @@ Simply delete the entire folder containing the code you downloaded in the step "
 
 ## 5. Train a agent
 
-Execute the provided notebook within this Nanodegree Udacity Online Workspace for "project #1  Navigation" (or build your own local environment and make necessary adjustements for the path to the UnityEnvironment in the code )
+Execute the notebook Navigation.ipynb included in the repository. Inside there will be specific cells with instructions for:
+- Importing the necessary packages
+- Define the path to the specific executable of the collecting_bananas environments
+- Examine the State and Action Spaces
+- Take Random actions in the environment
+- The training agent part
+- The different tests created to evaluate performance characteristics of the algorithm. From hyperparameters evaulation to enhanced algorithm evaluation (DDQN, Duelling).
 
 Note :
 - Manually playing with the environment has not been implemented as it is not available with Udacity Online Worspace (No Virtual Screen)    
 - Watching the trained agent playing in the environment has not been implemented neither, as it is not available with Udacity Online Worspace (No Virtual Screen) and not compatible with my personal setup (see Misc : Configuration used  section)
-- To do so, it is necessary to play with the agent in your local machine, with the steps described above.
+- To do so, it is necessary to play with the agent in your local machine, configuring the environment, with the steps described above.
