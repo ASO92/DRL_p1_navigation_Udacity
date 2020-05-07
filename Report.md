@@ -58,6 +58,12 @@ Furthermore, the value of epsilon is purposely decayed over time, so that the ag
 
 You can find the 𝛆-greedy logic implemented as part of the `agent.act()` method [here](C:\Users\rovaa\github\DRL_p1_navigation_Udacity\agent.py#L65) in `agent.py` of the source code.
 
+#### Deep Q-Network (DQN)
+With Deep Q-Learning, a deep neural network is used to approximate the Q-function. Given a network `F`, finding an optimal policy is a matter of finding the best weights `w` such that `F(s,a,w) ≈ Q(s,a)`.
+
+The neural network architecture used for this project can be found [here](C:\Users\rovaa\github\DRL_p1_navigation_Udacity\model.py#L5) in the `model.py` file of the source code. The network contains three fully connected layers with 64, 64, and 4 nodes respectively. Testing of bigger networks (more nodes) and deeper networks (more layers) did not produce better results.
+
+As for the network inputs, rather than feeding-in sequential batches of experience tuples, I randomly sample from a history of experiences using an approach called Experience Replay.
 
 ##### Algorithm implementation
 
@@ -66,3 +72,28 @@ You can find the 𝛆-greedy logic implemented as part of the `agent.act()` meth
 This algorithm screenshot is taken from the [Deep Reinforcement Learning Nanodegree course](https://www.udacity.com/course/deep-reinforcement-learning-nanodegree--nd893)
 
 The implementation of the algorithm may be found in [here](model.py)
+
+
+#### Double Deep Q-Network (DDQN)
+One issue with Deep Q-Networks is they can overestimate Q-values (see [Thrun & Schwartz, 1993](https://www.ri.cmu.edu/pub_files/pub1/thrun_sebastian_1993_1/thrun_sebastian_1993_1.pdf)). The accuracy of the Q-values depends on which actions have been tried and which states have been explored. If the agent hasn't gathered enough experiences, the Q-function will end up selecting the maximum value from a noisy set of reward estimates. Early in the learning process, this can cause the algorithm to propagate incidentally high rewards that were obtained by chance (exploding Q-values). This could also result in fluctuating Q-values later in the process.
+
+<img src="assets/overestimating-Q-values.png" width="50%" align="top-left" alt="" title="Overestimating Q-values" />
+
+We can address this issue using Double Q-Learning, where one set of parameters `w` is used to select the best action, and another set of parameters `w'` is used to evaluate that action.  
+
+<img src="assets/DDQN-slide.png" width="40%" align="top-left" alt="" title="DDQN" />
+
+The DDQN implementation can be found [here](C:\Users\rovaa\github\DRL_p1_navigation_Udacity\agent.py#L97) in the `agent.py` file of the source code.
+
+
+#### Dueling Agents
+Dueling networks utilize two streams: one that estimates the state value function `V(s)`, and another that estimates the advantage for each action `A(s,a)`. These two values are then combined to obtain the desired Q-values.  
+
+<img src="assets/dueling-networks-slide.png" width="60%" align="top-left" alt="" title="DDQN" />
+
+The reasoning behind this approach is that state values don't change much across actions, so it makes sense to estimate them directly. However, we still want to measure the impact that individual actions have in each state, hence the need for the advantage function.
+
+The dueling agents are implemented within the fully connected layers [here](https://github.com/tommytracey/DeepRL-P1-Navigation/blob/master/model.py#L21) in the `model.py` file of the source code.
+
+
+##### &nbsp;
