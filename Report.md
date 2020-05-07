@@ -27,22 +27,15 @@ Given this information, the agent has to learn how to best select actions. Four 
 The task is episodic, and **in order to solve the environment, the agent must get an average score of +13 over 100 consecutive episodes.**
 
 ## 2. Agent Implementation
+Agents use a policy to decide which actions to take within an environment. The primary objective of the learning algorithm is to find an optimal policy&mdash;i.e., a policy that maximizes the reward for the agent. Since the effects of possible actions aren't known in advance, the optimal policy must be discovered by interacting with the environment and recording observations. Therefore, the agent "learns" the policy through a process of trial-and-error that iteratively maps various environment states to the actions that yield the highest reward. This type of algorithm is called **Q-Learning**.
+
+As for constructing the Q-Learning algorithm, the general approach is to implement a handful of different components, then run a series of tests to determine which combination of components and which hyperparameters yield the best results.
+
+In the following sections, we'll describe each component of the algorithm in detail.
 
 ### Deep Q-Networks
 
-This project implements a *Value Based* method called [Deep Q-Networks](https://deepmind.com/research/dqn/).
-
-Deep Q Learning combines 2 approaches :
-- A Reinforcement Learning method called [Q Learning](https://en.wikipedia.org/wiki/Q-learning) (aka SARSA max)
-- A Deep Neural Network to learn a Q-table approximation (action-values)
-
-Especially, this implementation includes the 2 major training improvements by [Deepmind](https://deepmind.com) and described in their [Nature publication : "Human-level control through deep reinforcement learning (2015)"](https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf)
-- Experience Replay
-- Fixed Q Targets
-
-> Reinforcement learning is known to be unstable or even to diverge when a nonlinear function approximator such as a neural network is used to represent the action-value (also known as Q) function20. This instability has several causes: the correlations present in the sequence of observations, the fact that small updates to Q may significantly change the policy and therefore change the data distribution, and the correlations
-between the action-values and the target values .
-We address these instabilities with a novel variant of Q-learning, which uses two key ideas. First, we used a biologically inspired mechanism termed experience replay that randomizes over the data, thereby removing correlations in the observation sequence and smoothing over changes in the data distribution. Second, we used an iterative update that adjusts the action-values towards target values that are only periodically updated, thereby reducing correlations with the target.
+.
 
 #### Algorithm
 
