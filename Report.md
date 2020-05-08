@@ -140,7 +140,7 @@ max_t:
 eps_start:
 eps_end:
 eps_decay:
-train_mode(bool): 
+train_mode(bool):
 ckt_path(string):
 episode_Stop(bool):
 save_weights(bool):
