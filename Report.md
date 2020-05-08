@@ -145,7 +145,7 @@ ckt_path(string):pth_checkpoints/checkpoint.pth
 target_Stop(bool):True
 save_weights(bool):True
 ```
-![DQN_standard](./assets/DQN_standard.png)
+![DQN_standard](./assets/DQN_Standard.png)
 ```
 Episode 100	Average Score: 1.03
  Saving weights at episode 100
