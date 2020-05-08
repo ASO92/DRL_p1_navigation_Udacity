@@ -130,8 +130,23 @@ To experiment with how the Agent learns through distinct parameters, you can tun
 
 There have been carried out several tests to evaluate different performance
 
-### DQN algorithm evaluation
-First of all it has been tested the number of episodes in which the algorithm gets the 13 average scores in the last 100 episodes.
+### DQN algorithm performance
+
+
+First of all it has been tested the number of episodes in which the algorithm gets the 13 average scores in the last 100 episodes. Without DoubleDQN or Duelling and with the standard hyperparameters proposed in the DRL Udacity course.
+```
+n_episodes:
+max_t:
+eps_start:
+eps_end:
+eps_decay:
+train_mode(bool): 
+ckt_path(string):
+episode_Stop(bool):
+save_weights(bool):
+```
+
+(GRÁFICA DE SOCRES)
 
 ### DQN algorithm eps_Decay sensibility tests
-It is 
+It is
