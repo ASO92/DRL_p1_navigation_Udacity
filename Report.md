@@ -135,6 +135,78 @@ There have been carried out several tests to evaluate different performance
 
 First of all it has been tested the number of episodes in which the algorithm gets the 13 average scores in the last 100 episodes. Without DoubleDQN or Duelling and with the standard hyperparameters proposed in the DRL Udacity course.
 ```
+n_episodes: 1000
+max_t:1000
+eps_start:1.0
+eps_end:0.01
+eps_decay:0.995
+train_mode(bool):True
+ckt_path(string):pth_checkpoints/checkpoint.pth
+target_Stop(bool):True
+save_weights(bool):True
+```
+![DQN_standard](./assets/DQN_standard.png)
+```
+Episode 100	Average Score: 1.03
+ Saving weights at episode 100
+Episode 200	Average Score: 4.31
+ Saving weights at episode 200
+Episode 300	Average Score: 7.80
+ Saving weights at episode 300
+Episode 400	Average Score: 10.74
+ Saving weights at episode 400
+Episode 500	Average Score: 12.91
+ Saving weights at episode 500
+Episode 516	Average Score: 13.01
+Environment solved in 416 episodes!	Average Score: 13.01
+
+Total Training time = 10.9 min
+```
+(GRÁFICA DE SOCRES)
+
+### DQN algorithm eps_Decay sensibility tests
+In this test it is measured the sensibility to the eps_Decay value and to evaluate the average scores evolution in the episodes.
+```
+n_episodes: 1000
+max_t:1000
+eps_start:1.0
+eps_end:0.01
+eps_decay=[0.995, 0.975, 0.955, 0.935, 0.915]
+train_mode(bool):True
+ckt_path(string):pth_checkpoints/checkpoint.pth
+target_Stop(bool):True
+save_weights(bool):True
+```
+
+### DDQN algorithm performance
+The evaluation of the DDQN algorithm performance
+```
+n_episodes: 1000
+max_t:1000
+eps_start:1.0
+eps_end:0.01
+eps_decay:0.995
+train_mode(bool):True
+ckt_path(string):pth_checkpoints/checkpoint_DDQN.pth
+target_Stop(bool):True
+save_weights(bool):True
+```
+### Duelling algorithm performance
+
+```
+n_episodes: 1000
+max_t:1000
+eps_start:1.0
+eps_end:0.01
+eps_decay=[0.995, 0.975, 0.955, 0.935, 0.915]
+train_mode(bool):True
+ckt_path(string):pth_checkpoints/checkpoint.pth
+target_Stop(bool):True
+save_weights(bool):True
+```
+### DDQN and Duelling algorithm performance
+
+```
 n_episodes:
 max_t:
 eps_start:
@@ -145,18 +217,6 @@ ckt_path(string):
 episode_Stop(bool):
 save_weights(bool):
 ```
-
-(GRÁFICA DE SOCRES)
-
-### DQN algorithm eps_Decay sensibility tests
-It is
-
-### DDQN algorithm performance
-
-### Duelling algorithm performance
-
-### DDQN and Duelling algorithm performance
-
 ### Trained agent
 For DDQN and Duelling algorithm, it is shown the
 (Ver Silviomori)
