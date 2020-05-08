@@ -193,6 +193,20 @@ ckt_path(string):pth_checkpoints/checkpoint_DDQN.pth
 target_Stop(bool):True
 save_weights(bool):True
 ```
+
+![DDQN_Standard](./assets/DDQN_Standard.png)
+
+```
+Episode 100	Average Score: 2.72
+ Saving weights at episode 100
+Episode 200	Average Score: 8.23
+ Saving weights at episode 200
+Episode 300	Average Score: 12.63
+ Saving weights at episode 300
+Episode 310	Average Score: 13.00
+Environment solved in 210 episodes!	Average Score: 13.00
+```
+
 ### Duelling algorithm performance
 
 ```
