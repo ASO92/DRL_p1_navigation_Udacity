@@ -162,7 +162,6 @@ Environment solved in 416 episodes!	Average Score: 13.01
 
 Total Training time = 10.9 min
 ```
-(GRÁFICA DE SOCRES)
 
 ### DQN algorithm eps_Decay sensibility tests
 In this test it is measured the sensibility to the eps_Decay value and to evaluate the average scores evolution in the episodes.
@@ -177,6 +176,9 @@ ckt_path(string):pth_checkpoints/checkpoint.pth
 target_Stop(bool):True
 save_weights(bool):True
 ```
+![eps_decay_evolution_standard](./assets/decay_eps_episode_1000.png)
+
+
 
 ### DDQN algorithm performance
 The evaluation of the DDQN algorithm performance
