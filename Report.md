@@ -150,3 +150,11 @@ save_weights(bool):
 
 ### DQN algorithm eps_Decay sensibility tests
 It is
+
+### DDQN algorithm performance
+
+### Duelling algorithm performance
+
+### DDQN and Duelling algorithm performance
+
+## 5. Future lines of work
