@@ -224,7 +224,7 @@ ckt_path(string):pth_checkpoints/checkpoint_Duelling.pth
 target_Stop(bool):True
 save_weights(bool):True
 ```
-![DDQN_Duelling](./assets/Duelling_Standard.png)
+![Duelling_Standard](./assets/Duelling_Standard.png)
 
 ```
 Episode 100	Average Score: 0.30
@@ -256,6 +256,7 @@ ckt_path(string):pth_checkpoints/checkpoint_DDQN_Duel.pth
 target_Stop(bool):True
 save_weights(bool):True
 ```
+![DDQN_Duel_Standard](./assets/DDQN_Duel_Standard.png)
 
 ```
 
@@ -270,10 +271,6 @@ Episode 400	Average Score: 10.86
 Episode 490	Average Score: 13.01
 Environment solved in 390 episodes!	Average Score: 13.01
 ```
-
-### Trained agent
-For DDQN and Duelling algorithm, it is shown the
-(Ver Silviomori)
 
 
 ## 5. Future lines of work
