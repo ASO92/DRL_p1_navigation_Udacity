@@ -197,14 +197,18 @@ save_weights(bool):True
 ![DDQN_Standard](./assets/DDQN_Standard.png)
 
 ```
-Episode 100	Average Score: 2.72
+Episode 100	Average Score: 0.77
  Saving weights at episode 100
-Episode 200	Average Score: 8.23
+Episode 200	Average Score: 4.52
  Saving weights at episode 200
-Episode 300	Average Score: 12.63
+Episode 300	Average Score: 7.76
  Saving weights at episode 300
-Episode 310	Average Score: 13.00
-Environment solved in 210 episodes!	Average Score: 13.00
+Episode 400	Average Score: 10.45
+ Saving weights at episode 400
+Episode 496	Average Score: 13.02
+Environment solved in 396 episodes!	Average Score: 13.02
+
+Total Training time = 10.5 min
 ```
 
 ### Duelling algorithm performance
@@ -214,25 +218,59 @@ n_episodes: 1000
 max_t:1000
 eps_start:1.0
 eps_end:0.01
-eps_decay=[0.995, 0.975, 0.955, 0.935, 0.915]
+eps_decay:0.995
 train_mode(bool):True
-ckt_path(string):pth_checkpoints/checkpoint.pth
+ckt_path(string):pth_checkpoints/checkpoint_Duelling.pth
 target_Stop(bool):True
 save_weights(bool):True
 ```
+![DDQN_Duelling](./assets/Duelling_Standard.png)
+
+```
+Episode 100	Average Score: 0.30
+ Saving weights at episode 100
+Episode 200	Average Score: 3.27
+ Saving weights at episode 200
+Episode 300	Average Score: 6.79
+ Saving weights at episode 300
+Episode 400	Average Score: 9.67
+ Saving weights at episode 400
+Episode 500	Average Score: 12.66
+ Saving weights at episode 500
+Episode 510	Average Score: 13.00
+Environment solved in 410 episodes!	Average Score: 13.00
+
+Total Training time = 11.1 min
+```
+
 ### DDQN and Duelling algorithm performance
 
 ```
-n_episodes:
-max_t:
-eps_start:
-eps_end:
-eps_decay:
-train_mode(bool):
-ckt_path(string):
-episode_Stop(bool):
-save_weights(bool):
+n_episodes: 1000
+max_t:1000
+eps_start:1.0
+eps_end:0.01
+eps_decay:0.995
+train_mode(bool):True
+ckt_path(string):pth_checkpoints/checkpoint_DDQN_Duel.pth
+target_Stop(bool):True
+save_weights(bool):True
 ```
+
+```
+
+Episode 100	Average Score: 0.53
+ Saving weights at episode 100
+Episode 200	Average Score: 3.79
+ Saving weights at episode 200
+Episode 300	Average Score: 7.70
+ Saving weights at episode 300
+Episode 400	Average Score: 10.86
+ Saving weights at episode 400
+Episode 490	Average Score: 13.01
+Environment solved in 390 episodes!	Average Score: 13.01
+```
+
 ### Trained agent
 For DDQN and Duelling algorithm, it is shown the
 (Ver Silviomori)
